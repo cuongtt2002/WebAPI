@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/select2/css/select2.min.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/jquery.bxslider/jquery.bxslider.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/owl.carousel/owl.carousel.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/jquery-ui/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/fancyBox/source/jquery.fancybox.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/green.css"/>
+    <link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style_frm_dkdn.css"/>
+    <link rel="stylesheet" href="css/switcher.css">
+    <title>Eco Shop - How Coconut Oil May Rescue The Brain From Alzheimer’s Disease</title>
+    <script src="angular/angular.min.js"></script>
+    <script src="angular/global.js"></script>
+	<script src="angular/tintuc.js"></script>
+    <style>
+         #cart{
+            width: 80px;
+            height:40px;
+            float:right;
+            margin-top: 24px;	
+            text-align: center;
+            font-size: 12px;
+        }
+
+        #img-cart{
+            width: 20px;
+            height:20px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body ng-app="AppBanHang" ng-controller="tintucCtrl">
+
+    <div id="header" class="header">
+        <div class="container main-header">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 logo">
+                    <a href="index.html"><img style="width: 150px;height: 80px;" alt="Eco Shop" src="Images/Mark_brand.png"/></a>
+                </div>
+                <div style="margin-top: 30px; display: inline-block; ">
+                    <input id="TimKiem" type="text" ng-model="timkiemtheoten" placeholder="Bạn đang tìm gì..."/>
+                    <input style="border: 1px solid black;" id="nuttimkiem" type="submit" ng-click="TimKiem(timkiemtheoten)" value="Tìm kiếm" />
+                </div>
+                <div id="cart">
+                    <a href="cart.html" > <img id="img-cart" src="Images/cart.png" alt="Giỏ hàng" /> </a> 
+                    <a href="cart.html">Giỏ hàng</a>				
+                </div>	
+            
+            </div>
+        </div>
+        <div id="nav-top-menu" class="nav-top-menu">
+            <div class="container">
+                <div class="row">
+                    <div id="main-menu" class="col-sm-12 main-menu">
+                    <nav class="navbar navbar-default">
+                        <div class="container">
+                        <div class="navbar-header" style="background-color: #EEEEEE;">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                            </button>
+                            <a class="navbar-brand" href="#">My Shop</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li ng-repeat="s in Menu">
+                                <a href="{{s.link}}">{{s.tenMenu}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="columns-container">
+        <div class="container" id="columns">
+            <!-- row -->
+            <div class="row">
+                <!-- Left colunm -->
+                <div class="column col-xs-12 col-sm-3" id="left_column">
+                    <div class="block left-module">
+                        <p style="background-color:black ; color:#FFF" class="title_block"><span class="fa fa-pagelines"></span> SẢN PHẨM</p>
+                
+                        <div class="block_content">
+                            <!-- layered -->
+                            <div class="layered layered-category">
+                                <div class="layered-content">
+                                    <ul class="tree-menu">
+                                        <div ng-repeat="l in listloaisp">
+                                            <li><a href="danhmucsp.html?id={{l.maLoaiSanPham}}">{{l.tenLoaiSanPham}}</a></li>
+                                        </div>
+                
+                                </ul>
+                            </div>
+                            </div>
+                            <!-- ./layered -->
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Center colunm-->
+                <div class="center_column col-xs-12 col-sm-9" id="center_column">
+                    <!-- page heading-->
+                    <div class="page-heading">
+                        <h2>
+                            <span class="page-heading-title"><span class="fa fa-paperclip"></span>{{tintuc.tieuDe}} </span>
+                        </h2>
+                        
+                    </div>
+                    <br/>
+                    <div style="width: 300px;float: left;">
+                        <a>
+                            <img  src="Images/tintuc/{{tintuc.anhTinTuc}}"  alt="News">
+                        </a>
+                    </div>
+                    <p>
+                        {{tintuc.noiDung}}
+                    </p>
+
+                    <div class="entry-meta-data" style="float: right; padding-top: 10px; padding-bottom: 10px">
+                                                <span class="author">
+                                                <i class="fa fa-user"></i>
+                                                by: <a href="#">Ngày đăng :</a></span>
+                        <span class="date"><i class="fa fa-calendar"></i>{{tintuc.ngayDang |date:"dd/MM/yyyy"}}</span>
+                    </div>
+
+                    <div style="padding-top: 50px" ng-repeat="s in thongso">
+                        <p style="text-align: justify"></p>
+                    </div>
+
+
+
+                </div>
+                <!-- ./ Center colunm -->
+            </div>
+            <!-- ./row-->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" style="background-color: #EEEEEE;  ; color:black">
+        <div class="container">
+            <!-- introduce-box -->
+            <div id="introduce-box" class="row">
+                <div class="col-md-3">
+                    <div id="address-box">
+                        <a href="#"><img src="Images/Mark_brand.png" alt="logo" /></a>
+
+                        <div id="address-list">
+                            <div class="tit-name">Address:</div>
+                            <div class="tit-contain">140 Lê Trọng Tấn, Phường Tây Thạnh, Quận Tân Phú</div>
+                            <div class="tit-name">Phone:</div>
+                            <div class="tit-contain">01293012390</div>
+                            <div class="tit-name">Email:</div>
+                            <div class="tit-contain">Mark@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-White">
+                    <div class="row">
+                        <div class="col-sm-6" style="color: black">
+                            <div class="introduce-title">VỀ CHÚNG TÔI</div>
+                            <ul id="introduce-support" class="introduce-list">
+                                <li>Tổng quan về công ty</li>
+                                <li>Lịch sử hình thành</li>
+                                <li>Tầm nhìn – Sứ mệnh</li>
+                                <li>Câu chuyện thương hiệu</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6" style="color: black">
+                            <div class="introduce-title">HỖ TRỢ KHÁCH HÀNG</div>
+                            <ul id="introduce-Account" class="introduce-list">
+                                <li>Phiếu quà tặng</li>
+                                <li>Hướng dẫn chọn size</li>
+                                <li>Thẻ VIP</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div id="contact-box">
+                        <div class="introduce-title">Đăng ký nhận bản tin Mark Shop</div>
+                        <div class="input-group" id="mail-box">
+                            <input type="text" placeholder="Your email address" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">OK</button>
+                            </span>
+                        </div><!-- /input-group -->
+                        <div class="introduce-title">Theo chúng tôi</div>
+                        <!--<div class="social-link">-->
+                        <!--<a href="#"><i class="fa fa-facebook"></i></a>-->
+                        <!--<a href="#"><i class="fa fa-pinterest-p"></i></a>-->
+                        <!--<a href="#"><i class="fa fa-google-plus"></i></a>-->
+                        <!--<a href="#"><i class="fa fa-youtube"></i></a>-->
+                        <!--</div>-->
+                        <div class="social-link">
+                            <ul class="social-icons">
+                                <li><a class="rss" data-original-title="rss" href="#"></a></li>
+                                <li><a class="facebook" data-original-title="facebook" href="#"></a></li>
+                                <li><a class="twitter" data-original-title="twitter" href="#"></a></li>
+                                <li><a class="googleplus" data-original-title="googleplus" href="#"></a></li>
+                                <li><a class="linkedin" data-original-title="linkedin" href="#"></a></li>
+                                <li><a class="youtube" data-original-title="youtube" href="#"></a></li>
+                                <li><a class="vimeo" data-original-title="vimeo" href="#"></a></li>
+                                <li><a class="skype" data-original-title="skype" href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- /#introduce-box -->
+
+
+            <div id="footer-menu-box">
+                <p class="text-center">Đăng ký với chúng tôi để nhận email về sản phẩm mới, khuyến mại đặc biệt và các sự kiện độc đáo.</p>
+            </div><!-- /#footer-menu-box -->
+        </div>
+    </footer>
+    <a href="#" class="scroll_top" title="Scroll to Top" style="display: inline;">Scroll</a>
+    <script type="text/javascript" src="lib/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="lib/fancyBox/source/jquery.fancybox.pack.js" ></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/select2/js/select2.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="lib/owl.carousel/owl.carousel.min.js"></script>
+
+
+
+    <script type="text/javascript" src="js/jquery.actual.min.js"></script>
+    <script type="text/javascript" src="js/theme-script.js"></script>
+    <script type="text/javascript" src="js/shoppingCart.js"></script>
+
+    <script type="text/javascript" src="js/layout.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            Layout.init();
+            Layout.initOWL();
+            Layout.initTwitter();
+            Layout.initImageZoom();
+            Layout.initTouchspin();
+            Layout.initUniform();
+            Layout.initSliderRange();
+        });
+    </script>
+</body>
+</html>

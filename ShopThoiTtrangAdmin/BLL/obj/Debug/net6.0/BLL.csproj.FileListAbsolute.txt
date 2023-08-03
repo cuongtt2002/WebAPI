@@ -1,0 +1,17 @@
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\bin\Debug\net6.0\BLL.deps.json
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\bin\Debug\net6.0\BLL.dll
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\bin\Debug\net6.0\BLL.pdb
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\bin\Debug\net6.0\DAL.dll
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\bin\Debug\net6.0\Model.dll
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\bin\Debug\net6.0\DAL.pdb
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\bin\Debug\net6.0\Model.pdb
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\obj\Debug\net6.0\BLL.dll
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\obj\Debug\net6.0\refint\BLL.dll
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\obj\Debug\net6.0\BLL.pdb
+D:\Web API\BaiTapLon\ShopThoiTtrangAdmin\BLL\obj\Debug\net6.0\ref\BLL.dll

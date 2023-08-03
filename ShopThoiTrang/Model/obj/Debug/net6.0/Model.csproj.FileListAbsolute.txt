@@ -1,0 +1,12 @@
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\bin\Debug\net6.0\Model.deps.json
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\bin\Debug\net6.0\Model.dll
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\bin\Debug\net6.0\Model.pdb
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\obj\Debug\net6.0\Model.csproj.AssemblyReference.cache
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\obj\Debug\net6.0\Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\obj\Debug\net6.0\Model.AssemblyInfoInputs.cache
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\obj\Debug\net6.0\Model.AssemblyInfo.cs
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\obj\Debug\net6.0\Model.csproj.CoreCompileInputs.cache
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\obj\Debug\net6.0\Model.dll
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\obj\Debug\net6.0\refint\Model.dll
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\obj\Debug\net6.0\Model.pdb
+D:\Web API\BaiTapLon\ShopThoiTrang\Model\obj\Debug\net6.0\ref\Model.dll

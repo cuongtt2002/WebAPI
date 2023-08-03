@@ -1,0 +1,59 @@
+/*============PEOPLE SAY=========*/
+#owl-demo-ppsay {
+	padding: 20px 0px;
+	background-color: #f8f8f8;
+}
+.ppsay-title {
+	text-align: center;
+	font-size: 18px;
+	color: #35240d;
+	text-transform: uppercase;
+	line-height: 45px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+.ppsayavt {
+	padding: 0px;
+}
+.ppsayavt img{
+	width:100%;
+	border-radius: 100%;
+}
+.ppsaycontentcmt {
+	color: #35240d;
+	font-size: 13px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #d7d4d0;
+}
+.ppsayauthor span{
+	font-style: italic;
+	color: #35240d;
+	font-size: 14px;
+}
+.ppsayauthor .name{
+	color: #1dc483;
+	font-style: normal;
+}
+#owl-demo-ppsay .carousel-indicators{
+	width:auto;
+	margin-left:0px;
+	bottom:0px;
+	top:auto;
+}
+#owl-demo-ppsay .carousel-inner{
+	padding-bottom: 50px;
+}
+#owl-demo-ppsay .carousel-indicators .active{
+	background-color: #1dc483;
+	width:14px;
+	height:14px;
+}
+#owl-demo-ppsay .carousel-indicators li{
+	background-color: #968e82;
+	width:14px;
+	height:14px;
+	border:none;
+	margin:0px;
+}

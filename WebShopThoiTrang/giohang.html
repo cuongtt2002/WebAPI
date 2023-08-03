@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/select2/css/select2.min.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/jquery.bxslider/jquery.bxslider.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/owl.carousel/owl.carousel.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/jquery-ui/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/fancyBox/source/jquery.fancybox.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/green.css"/>
+    <link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style_frm_dkdn.css"/>
+    <link rel="stylesheet" href="css/switcher.css">
+    <title>Eco Shop - Shopping Cart</title>
+    <script src="angular/angular.min.js"></script>
+    <script src="angular/global.js"></script>
+	<script src="angular/cart.js"></script>
+
+    <style>
+         #cart{
+            width: 80px;
+            height:40px;
+            float:right;
+            margin-top: 24px;	
+            text-align: center;
+            font-size: 12px;
+        }
+
+        #img-cart{
+            width: 20px;
+            height:20px;
+            margin-bottom: 2px;
+        }
+    </style>
+    
+</head>
+<body ng-app="AppBanHang" ng-controller="CartCtrl">
+<!-- HEADER -->
+<div id="header" class="header">
+
+    <!-- MAIN HEADER -->
+    <div class="container main-header">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 logo">
+                <a href="index.html"><img style="width: 150px;height: 80px;" alt="Eco Shop" src="Images/Mark_brand.png"/></a>
+            </div>
+            <div style="margin-top: 30px; display: inline-block; ">
+                <input id="TimKiem" type="text" ng-model="timkiemsanpham" placeholder="Bạn đang tìm gì..."/>
+                <input style="border: 1px solid black;" id="nuttimkiem" type="submit" ng-click="nuttimkiem(timkiemsanpham)" value="Tìm kiếm" />
+            </div>
+            <div id="cart">
+                <a  > <img id="img-cart" src="Images/cart.png" alt="Giỏ hàng" /> </a> 
+                <a href="giohang.html" >Giỏ hàng {{soluongdamua}}</a>				
+            </div>	
+           
+        </div>
+    </div>
+    <!-- END MANIN HEADER -->
+    <div id="nav-top-menu" class="nav-top-menu">
+        <div class="container">
+          <div class="row">
+            <div id="main-menu" class="col-sm-12 main-menu">
+              <nav class="navbar navbar-default">
+                <div class="container">
+                  <div class="navbar-header" style="background-color: #EEEEEE;">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                      <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="#">My Shop</a>
+                  </div>
+                  <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li ng-repeat="s in Menu">
+                        <a href="{{s.link}}">{{s.tenMenu}}</a>
+                        </li>
+                    </ul>
+                 </div>
+
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>          
+   </div>
+<!-- END Home slideder-->
+
+<!-- page wapper-->
+<div class="columns-container">
+    <div class="container" id="columns">
+        <!-- page heading-->
+        <h2 class="page-heading">
+            <span class="page-heading-title">Giỏ Hàng</span>
+        </h2>
+        <!-- ../page heading-->
+        <div class="page-content page-order">
+            <div class="heading-counter warning" ><span class="fa fa-shopping-cart"></span> Số lượng sản phẩm :
+                <span id="count-cart" style="font-weight: bold"></span>{{soluongdamua}} <span>sản phẩm</span>
+            </div>
+            <div class="order-detail-content">
+                <table class="table table-bordered table-responsive cart_summary">
+                    <thead>
+                    <tr>
+                        <th class="cart_product">Ảnh</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Giá Tiền</th>
+                        <th>Số lượng</th>
+                        <th>Tổng Tiền</th>
+                        <th class="action"><i class="fa fa-trash-o"></i></th>
+                    </tr>
+                    </thead>
+                    <tbody id="show-item-cart" ng-repeat=" s in danhachsanphamgiohang">
+                        <tr>
+                            <td class='cart_product'>
+                                <a href='#'><img src='Images/sanpham/{{s.anhDaiDien}}' alt='Product'></a>
+                            </td>
+                            <td class='cart_description'>
+                                <p class='product-name'><a href='#'>{{s.tenSP}}</a></p>
+                                <small class='cart_ref'>{{s.maSanPham}}</small>"
+                                <br>
+                            </td>
+                            <td class='price'><span style='color: #e84d1c; font-size: 18px; font-weight: bold;'>{{s.giaTien |number:1.0-3 }} VNĐ</span></td>                            <td class='qty'>
+                                <input class='form-control input-sm' type='text' readonly value='{{s.soLuong}}' max="{{s.soLuong}}">
+                                <a class='plus' ><i class='fa fa-caret-up' ng-click="Tangsoluong(s)"></i></a>
+                                <a class='minus'><i class='fa fa-caret-down'  ng-click="Giamsoluong(s)"></i></a>
+                            </td>
+                            <td class='price'>
+                                <span style='color: #e84d1c; font-size: 18px; font-weight: bold;'>{{s.giaTien * s.soLuong |number:1.0-3 }} VNĐ</span>
+                            </td>
+                            <td class='action'>
+                             <a class='remove_product' ng-click="xoa1sp(s)">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="2" rowspan="1"></td>
+                        <td colspan="3"><strong>Tổng Tiền :</strong></td>
+                        <td colspan="1" id="total_price" style="font-weight: bold; color: #e84d1c; font-size: 20px;">{{luutongtien|number:1.0-3 }} VNĐ</td>
+                        <td></td>
+                    </tr>
+                    </tfoot>
+                </table>
+                <div class="cart_navigation">
+                    <a class="prev-btn" href="index.html">tiếp tục mua hàng </a>
+                    <a class="btn btn-danger delete-btn" style="margin-left: 350px;"  ng-click="xoatatca()">Xóa tất cả </a>
+                    <a class="next-btn" ng-click="dathang()">Đặt hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ./page wapper-->
+
+
+
+<!-- Footer -->
+<footer id="footer" style="background-color: #EEEEEE;  ; color:black">
+    <div class="container">
+        <!-- introduce-box -->
+        <div id="introduce-box" class="row">
+            <div class="col-md-3">
+                <div id="address-box">
+                    <a href="#"><img src="Images/Mark_brand.png" alt="logo" /></a>
+
+                    <div id="address-list">
+                        <div class="tit-name">Address:</div>
+                        <div class="tit-contain">140 Lê Trọng Tấn, Phường Tây Thạnh, Quận Tân Phú</div>
+                        <div class="tit-name">Phone:</div>
+                        <div class="tit-contain">01293012390</div>
+                        <div class="tit-name">Email:</div>
+                        <div class="tit-contain">Mark@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-White">
+                <div class="row">
+                    <div class="col-sm-6" style="color: black">
+                        <div class="introduce-title">VỀ CHÚNG TÔI</div>
+                        <ul id="introduce-support" class="introduce-list">
+                            <li>Tổng quan về công ty</li>
+                            <li>Lịch sử hình thành</li>
+                            <li>Tầm nhìn – Sứ mệnh</li>
+                            <li>Câu chuyện thương hiệu</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6" style="color: black">
+                        <div class="introduce-title">HỖ TRỢ KHÁCH HÀNG</div>
+                        <ul id="introduce-Account" class="introduce-list">
+                            <li>Phiếu quà tặng</li>
+                            <li>Hướng dẫn chọn size</li>
+                            <li>Thẻ VIP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="contact-box">
+                    <div class="introduce-title">Đăng ký nhận bản tin Mark Shop</div>
+                    <div class="input-group" id="mail-box">
+                        <input type="text" placeholder="Your email address" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">OK</button>
+                        </span>
+                    </div><!-- /input-group -->
+                    <div class="introduce-title">Theo chúng tôi</div>
+                    <!--<div class="social-link">-->
+                    <!--<a href="#"><i class="fa fa-facebook"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-pinterest-p"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-google-plus"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-youtube"></i></a>-->
+                    <!--</div>-->
+                    <div class="social-link">
+                        <ul class="social-icons">
+                            <li><a class="rss" data-original-title="rss" href="#"></a></li>
+                            <li><a class="facebook" data-original-title="facebook" href="#"></a></li>
+                            <li><a class="twitter" data-original-title="twitter" href="#"></a></li>
+                            <li><a class="googleplus" data-original-title="googleplus" href="#"></a></li>
+                            <li><a class="linkedin" data-original-title="linkedin" href="#"></a></li>
+                            <li><a class="youtube" data-original-title="youtube" href="#"></a></li>
+                            <li><a class="vimeo" data-original-title="vimeo" href="#"></a></li>
+                            <li><a class="skype" data-original-title="skype" href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /#introduce-box -->
+
+
+        <div id="footer-menu-box">
+            <p class="text-center">Đăng ký với chúng tôi để nhận email về sản phẩm mới, khuyến mại đặc biệt và các sự kiện độc đáo.</p>
+        </div><!-- /#footer-menu-box -->
+    </div>
+</footer>
+
+
+<a href="#" class="scroll_top" title="Scroll to Top" style="display: inline;">Scroll</a>
+<!-- Script-->
+
+<script type="text/javascript" src="lib/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="lib/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="lib/fancyBox/source/jquery.fancybox.pack.js" ></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/select2/js/select2.min.js"></script>
+<script type="text/javascript" src="lib/jquery.bxslider/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="lib/owl.carousel/owl.carousel.min.js"></script>
+
+
+
+<script type="text/javascript" src="js/jquery.actual.min.js"></script>
+<script type="text/javascript" src="js/theme-script.js"></script>
+
+<script type="text/javascript" src="js/layout.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        Layout.init();
+        Layout.initOWL();
+        Layout.initTwitter();
+        Layout.initImageZoom();
+        Layout.initTouchspin();
+        Layout.initUniform();
+        Layout.initSliderRange();
+    });
+</script>
+</body>
+
+</html>

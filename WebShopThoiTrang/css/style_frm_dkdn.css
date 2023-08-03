@@ -1,0 +1,93 @@
+#myModal{
+    display: none;
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+
+.sign-with {
+    padding: 0px 20px;
+}
+
+div#OR {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #C2C2C2;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    float: right;
+    position: absolute;
+    right: -16px;
+    top: 40%;
+    z-index: 1;
+    background: #DFDFDF;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  max-width: 700px;
+  width:90%;
+}
+
+.social-header {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+    font-weight: 700;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.social-column {
+    margin-top: 0;
+    display: table;
+    margin-top: 25px;
+    padding-left: 22px;
+}
+
+.social-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.social-inner div{
+    margin-bottom: 15px;
+    margin-left: 30px;
+}
+
+.social-inner img:hover{
+    opacity: 0.9;
+}
+
+.btn-sm-login{
+    text-transform: uppercase;
+}
+
+#Registration label{
+    padding-right: 0px;
+}
+
+span.note-frm{
+    color: #999;
+    margin-top: 20px;
+    font-size: 11px;
+}

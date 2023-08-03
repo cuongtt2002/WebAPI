@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "foRW2H7qPd4WIDIlPVGPs4R/vBOOQ/3STsEju/8DbNVLucPMmIP5BUXfEgV5gU6CDBSLG2xLUWJYLDXfIx7UYg==",
+  "success": true,
+  "projectFilePath": "D:\\Web API\\BaiTapLon\\ShopThoiTtrangAdmin\\Model\\Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
